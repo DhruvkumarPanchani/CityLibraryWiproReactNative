@@ -36,13 +36,13 @@ export var getBookCount = () =>{
 }
 
 // Add Book
-export var addBook = (customer) =>{
+export var addBook = (book) =>{
     return fetch(apiEndPoint, {
         method: 'post',
             headers: {
             'Content-Type': 'application/json;charset=utf-8'
               },
-              body:JSON.stringify(customer)
+              body:JSON.stringify(book)
         })
       .then(response => response.json())
       .then(response => {
@@ -53,13 +53,13 @@ export var addBook = (customer) =>{
 }
 
 // Delete Book
-export var deleteBook = (customer) =>{
+export var deleteBook = (book) =>{
     return fetch(apiEndPoint, {
         method: 'delete',
             headers: {
             'Content-Type': 'application/json;charset=utf-8'
               },
-              body:JSON.stringify(customer)
+              body:JSON.stringify(book)
         })
       .then(response => response.json())
       .then(response => {
@@ -86,13 +86,13 @@ export var getBookById =  (id) =>{
 }
 
 // Update Book
-export var updateBook = (customer) =>{
+export var updateBook = (book) =>{
     return fetch(apiEndPoint, {
         method: 'put',
             headers: {
             'Content-Type': 'application/json;charset=utf-8'
               },
-              body:JSON.stringify(customer)
+              body:JSON.stringify(book)
         })
       .then(response => response.json())
       .then(response => {

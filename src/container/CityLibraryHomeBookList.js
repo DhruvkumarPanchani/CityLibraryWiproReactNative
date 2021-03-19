@@ -84,7 +84,7 @@ const CityLibraryHomeBookList = ({navigation}) => {
             deleteBook={deleteBook} 
             navigation = {navigation}
             editBook={(id)=>{
-                // navigation.navigate('Add Book');  
+              navigation.navigate('CityLibraryAddBook');  
             }}></CityLibraryBookList>
             <View/>
             </View>

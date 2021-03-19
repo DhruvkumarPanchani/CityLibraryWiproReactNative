@@ -3,17 +3,18 @@ import { SafeAreaView, Image,View, FlatList, StyleSheet, Text, StatusBar, Toucha
 
 // Author Dhruv Panchani
 
-const Item = ({ id, title,author,publisher,isbn,year,cover}) => (
+const Item = ({ id, title,author,publisher,isbn,year,cover,navigation}) => (
     <View style={styles.item}>
     <View style={{flex: 1, flexDirection:'row'}}>
       <View style={{flex: 5}}>
-      <Text style={styles.title}>{title}</Text>
-      <Text style={styles.author}>{author}</Text>
+      Name : <Text  style={styles.title}>{title}</Text>
+      Author : <Text style={styles.author}>{author}</Text>
       </View>
-      <View style={{flex: 1}}>
+       <View style={{flex: 1}}>
         <TouchableHighlight onPress={()=>{
-          //navigation.navigate('Edit Book',{id:id});  
+          navigation.navigate('CityLibraryAddBook',{id:id});  
         }}>
+
         <Image
           style={styles.tinyLogo}
           source={{
@@ -21,26 +22,24 @@ const Item = ({ id, title,author,publisher,isbn,year,cover}) => (
           }}
         />
         </TouchableHighlight>
-      </View>
+      </View> 
+
 
       <View style={{flex: 1}}>
-        <TouchableHighlight onPress={()=>{
-         deleteBook(id);
-        }}>
         <Image
-          style={styles.tinyLogo}
+          style={styles.authorLogo}
           source={{
-            uri: 'http://training.pyther.com/icons/delete.png?9',
+            uri: cover,
           }}
         />
-        </TouchableHighlight>
       </View>
+
     </View>
     <View>
-      <Text style={styles.publisher}>{publisher}</Text>
-      <Text style={styles.isbn}>{isbn}</Text>
-      <Text style={styles.year}>{year}</Text>
-      <Text style={styles.cover}>{cover}</Text>
+    Publisher : <Text style={styles.publisher}>{publisher}</Text>
+    ISBN : <Text style={styles.isbn}>{isbn}</Text>
+    Year :  <Text style={styles.year}>{year}</Text>
+    Cover : <Text style={styles.cover}>{cover}</Text>
       
 
 
@@ -72,7 +71,7 @@ const styles = StyleSheet.create({
       marginTop: StatusBar.currentHeight || 0,
     },
     item: {
-      backgroundColor: '#f9c2ff',
+      backgroundColor: '#C2FFF9',
       padding: 20,
       marginVertical: 8,
       marginHorizontal: 16,
@@ -89,6 +88,14 @@ const styles = StyleSheet.create({
     tinyLogo: {
       width: 30,
       height: 30,
+    },
+    authorLogo: {
+      width: '300%',
+      height: '300%',
+      overflow: 'hidden',
+      alignItems: 'right',
+      position: 'relative',
+      margin: 5,
     },
   });
   
