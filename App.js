@@ -6,8 +6,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 
 // Imports Components
 
-import CityLibraryLogin from './src/container/CityLibraryLogin'
-
+import CityLibraryLogin from './src/container/CityLibraryLogin';
+import CityLibraryHomeBookList from './src/container/CityLibraryHomeBookList';
 
 // Author Dhruv Panchani
 
@@ -18,6 +18,7 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
       <Stack.Screen name="CityLibraryLogin" component={CityLibraryLogin} />
+      <Stack.Screen name="CityLibraryHomeBookList" component={CityLibraryHomeBookList} />
       </Stack.Navigator>
     </NavigationContainer>
   );
