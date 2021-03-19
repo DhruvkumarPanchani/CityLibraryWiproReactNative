@@ -90,8 +90,8 @@ const styles = StyleSheet.create({
       height: 30,
     },
     authorLogo: {
-      width: '300%',
-      height: '300%',
+      width: '100%',
+      height: '100%',
       overflow: 'hidden',
       alignItems: 'right',
       position: 'relative',
